@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Book Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>📚 Personal Book Library</h1>
+    <p>Organize • Search • Track</p>
+</header>
+
+<main class="container">
+
+    <!-- ADD BOOK -->
+    <section class="glass">
+        <h2>Add New Book</h2>
+
+        <div class="form-grid">
+            <input id="title" type="text" placeholder="Book Title">
+            <input id="author" type="text" placeholder="Author">
+            <input id="category" type="text" placeholder="Category">
+        </div>
+
+        <!-- IMPORTANT FIX -->
+        <button type="button" onclick="addBook()">➕ Add Book</button>
+    </section>
+
+    <!-- SEARCH -->
+    <section class="glass">
+        <h2>Search & Filter</h2>
+        <input id="search" type="text"
+               placeholder="Search by title or author"
+               onkeyup="renderBooks()">
+
+        <select id="filterCategory" onchange="renderBooks()">
+            <option value="">All Categories</option>
+        </select>
+    </section>
+
+    <!-- BOOK LIST -->
+    <section class="glass">
+        <h2>Your Books</h2>
+        <div id="bookList" class="book-grid"></div>
+    </section>
+
+    <!-- HISTORY -->
+    <section class="glass">
+        <h2>Borrow History</h2>
+        <ul id="historyList"></ul>
+    </section>
+
+</main>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
